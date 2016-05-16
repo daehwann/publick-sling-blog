@@ -53,7 +53,7 @@ public class FileUploadServiceImpl implements FileUploadService {
             final RequestParameter[] pArr = pairs.getValue();
             final RequestParameter param = pArr[0];
 
-            if (!param.isFormField()) {
+            if (!param.isFormField() && param.getSize() > 0) {
                 final String name = param.getFileName();
                 final String mimeType = param.getContentType();
 
